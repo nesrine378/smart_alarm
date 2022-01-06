@@ -3,6 +3,7 @@ require('dotenv').config();
 const {PythonSell} = require("python-shell");
 const config = require('./config');
 const helmet = require("helmet");
+const fs = require('fs')
 
 const key_file = process.env.KEY_FILE || config["key-file"]
 const cert_file = process.env.CERT_FILE || config["cert-file"]
@@ -12,11 +13,10 @@ const options = {
   cert: fs.readFileSync(cert_file),
  
 }
-app.use(helmet());
+
 
 var app = express();
-
-
+app.use(helmet());
 const server = tls.createServer(options, app);
 
 
@@ -47,7 +47,7 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/user.routes.js'))
 app.use(express.static('upload/images'));
 app.use('/', require('./routes/profile.routes.js'))
-
+app.use(express.static('assets'));
 
 server.listen(port, (error) => {
   if (error) {
