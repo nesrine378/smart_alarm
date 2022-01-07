@@ -8,21 +8,25 @@ It's about a Smart alarm application using clouf of things. The goal is to creat
 - Middleware : Node.js
 - Backend : Raspberry pi 4 , mosquitto
 - Database : mongoDB
-![architecture](https://user-images.githubusercontent.com/96119446/148504968-03cd878d-c966-4e79-977f-c52266ffb238.PNG)
+![architecture](https://user-images.githubusercontent.com/96119446/148507083-7e4dc3cc-ad89-4c85-a18c-f3e71cb2971e.PNG)
 
 ## Technical documentation 
 
 ### how to install SmartAlarm ?
 ######  Server side :
 - Download and Install node.js :
+
 `wget -qO- https://deb.nodesource.com/setup_14.x | sudo -E bash -`
+
 `sudo apt install -y nodejs`
 
 - Run the server :
+
 `npm start` 
 
 ######  Client side :
 - Run the application :
+
 `flutter run `
 
 ## Deployment
